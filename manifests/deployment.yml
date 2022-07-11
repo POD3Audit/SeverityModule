@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: podauditseveritymodule 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podauditseveritymodule
+  template:
+    metadata:
+      labels:
+        app: podauditseveritymodule 
+    spec:
+      containers:
+        - name: podauditseveritymodule 
+          image: auditmanagementpod3.azurecr.io/podauditseveritymodule
+          ports:
+          - containerPort: 80
